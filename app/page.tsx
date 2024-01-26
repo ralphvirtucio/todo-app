@@ -11,9 +11,50 @@
 // Drag and drop to reorder list
 export default function Home() {
   return (
+    <>
+    <header>
+      <h1>TODO</h1>
+
+      <div>
+        <button>Light</button>
+      </div>
+    </header>
     <main>
-      Hello World
+      <section>
+        <input type="text" placeholder="Create a new todo..." />
+      </section>
+
+      <section>
+        <ul>
+          <li>
+            <div>
+              <input type="checkbox" id="is-complete" />
+            </div>
+            <p>Jog around the park 3x</p>
+
+            <button>X</button>
+          </li>
+        </ul>
+
+        <div>
+          <p>5 items left</p>
+          <button>Clear Completed</button>
+        </div>
+      </section>
+
+      <section>
+        <nav>
+          <a href="#">All</a>
+          <a href="#">Active</a>
+          <a href="#">Completed</a>
+        </nav>
+      </section>
+
+      <section>
+        <p>Drag and drop to reorder list</p>
+      </section>
     </main>
+    </>
   );
 }
 
