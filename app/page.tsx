@@ -2,8 +2,19 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 
+// Todo
+
+// <!-- Add dynamic number --> items left
+
+// All
+// Active 
+// Completed
+
+// Clear Completed
+
+// Drag and drop to reorder list
 export default function Home() {
-  return (
+ return (
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
@@ -94,3 +105,7 @@ export default function Home() {
     </main>
   );
 }
+
+
+
+
