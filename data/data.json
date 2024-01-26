@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "description": "Jog around the park 3x",
+      "isCompleted": false,
+      "isActive": false
+    },
+    {
+      "description": "10 minutes meditation",
+      "isCompleted": false,
+      "isActive": false
+    },
+    {
+      "description": "Read for 1 hour",
+      "isCompleted": false,
+      "isActive": false
+    },
+    {
+      "description": "Pickup groceries",
+      "isCompleted": false,
+      "isActive": false
+    },
+    {
+      "description": "Complete Todo App on Frontend Mentor",
+      "isCompleted": false,
+      "isActive": false
+    }
+  ]
+}
