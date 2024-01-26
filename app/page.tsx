@@ -1,5 +1,7 @@
 // Todo
 
+import InputContainer from "@/container/InputContainer";
+
 // <!-- Add dynamic number --> items left
 
 // All
@@ -13,10 +15,7 @@ export default function Home() {
   return (
     <>
       <section>
-        <input
-          type='text'
-          placeholder='Create a new todo...'
-        />
+        <InputContainer />
       </section>
 
       <section>

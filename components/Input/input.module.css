@@ -1,0 +1,26 @@
+.form__control {
+  display: flex;
+  align-items: center;
+  gap: .75rem; 
+  background-color: #fff;
+  border-radius: 0.3125rem;
+  padding-block: 1.13rem;
+  padding-inline: 1.25rem;
+  margin-inline: 1.5rem;
+  transform: translateY(-6rem);
+
+
+  .readonly-checkbox {
+    line-height: 0;
+  }
+}
+
+.create-todo__input {
+  outline: none;
+  border: none;
+  width: 100%;
+
+  .create-todo__input::placeholder {
+    color: hsla(235, 9%, 61%, 1);
+  }
+}

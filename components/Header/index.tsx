@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './header.module.css';
-import { Moon } from '../Icons/Moon';
+import { IconMoon } from '../Icons/Moon';
 
 
 export const Header = () => {
@@ -10,7 +10,7 @@ export const Header = () => {
 
       <div>
         <button>
-          <Moon />
+          <IconMoon />
         </button>
       </div>
     </header>
