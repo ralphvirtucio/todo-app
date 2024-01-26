@@ -1,0 +1,21 @@
+.header {
+  background-image: url('../../public/images/bg-mobile-light.jpg');
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1.5rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 200px;
+}
+
+.header h1 {
+  letter-spacing: 1rem;
+  color: #fff;
+}
+
+
+.header button {
+  border: none;
+  background-color: transparent;
+}
