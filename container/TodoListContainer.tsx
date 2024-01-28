@@ -1,9 +1,21 @@
+"use client"
+
+import { TodoItem } from '@/components/TodoItem'
 import React from 'react'
 
 const TodoListContainer = ({todos}) => {
-console.log(todos)
+
+  const {data} = todos
+  const mappedTodosList = data.map(item => {
+    return (
+      <TodoItem key={item.id} todo={item} />
+    )
+  }) 
+
   return (
-    <ul>TodoList</ul>
+    <ul>
+      {mappedTodosList}
+    </ul>
   )
 }
 

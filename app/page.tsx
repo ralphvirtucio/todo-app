@@ -1,5 +1,5 @@
 // Todo
-"use-client"
+"use client"
 
 import InputContainer from "@/container/InputContainer";
 import TodoListContainer from "@/container/TodoListContainer";

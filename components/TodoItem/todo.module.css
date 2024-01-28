@@ -1,0 +1,22 @@
+
+.todo {
+display: flex;
+align-items: center;
+padding-block: 1.3rem;
+border-bottom: 1px solid hsla(236, 32%, 92%, 1);
+padding-inline: 1.25rem;
+}
+
+
+.todo__description {
+  font-size: 0.75rem;
+  color: #494c6b;
+  margin-inline-start: .75rem;
+  margin-inline-end: auto;
+}
+
+.todo__remove-btn {
+  border: none;
+  background-color: transparent;
+  line-height: 0;
+}
