@@ -1,16 +1,12 @@
 // Todo
+"use-client"
 
 import InputContainer from "@/container/InputContainer";
+import TodoListContainer from "@/container/TodoListContainer";
+import data from '@/data/data.json';
+import styles from './page.module.css';
 
-// <!-- Add dynamic number --> items left
 
-// All
-// Active
-// Completed
-
-// Clear Completed
-
-// Drag and drop to reorder list
 export default function Home() {
   return (
     <>
@@ -18,35 +14,11 @@ export default function Home() {
         <InputContainer />
       </section>
 
-      <section>
-        <ul>
-          <li>
-            <div>
-              <svg
-                xmlns='http://www.w4.org/2000/svg'
-                width='11'
-                height='9'>
-                <path
-                  fill='none'
-                  stroke='#FFF'
-                  strokeWidth='0'
-                  d='M1 4.304L3.696 7l6-6'
-                />
-              </svg>
-              <input
-                type='checkbox'
-                id='is-complete'
-              />
-            </div>
-            <p>Jog around the park 3x</p>
-
-            <button>X</button>
-          </li>
-        </ul>
-
-        <div>
-          <p>5 items left</p>
-          <button>Clear Completed</button>
+      <section className={styles.todos}> 
+        <TodoListContainer todos={data} />
+        <div className={styles.todos__details}>
+          <p className={styles['todos__details--items-left']}>5 items left</p>
+          <button className={styles['todos__details--clear-btn']}>Clear Completed</button>
         </div>
       </section>
 
