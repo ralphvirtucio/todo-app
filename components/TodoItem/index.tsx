@@ -6,10 +6,10 @@ import { IconCross } from '../Icons/Cross'
 export const TodoItem = ({todo}) => {
   return (
     <li className={styles.todo}>
-      <input type="checkbox" className={styles['todo__input-checkbox']} name="todo-checkbox" id="todo-checkbox" />
-      <p className={styles.todo__description}>
+      <input type="checkbox" className={styles['todo__input-checkbox']} name="todo-checkbox" id={todo.id} />
+      <label className={styles.todo__description} htmlFor={todo.id}>
         {todo.description}
-      </p>
+      </label>
       <button className={styles['todo__remove-btn']}>
         <IconCross />
       </button>

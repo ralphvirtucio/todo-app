@@ -1,0 +1,33 @@
+.card {
+  border-radius: 0.3125rem;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  background-color: #fff;
+}
+
+.card.todos {
+  margin-inline: 1.5rem;
+  padding-block-end: 1rem;
+  margin-block-end: 1rem;
+  transform: translateY(-5rem);
+}
+
+.card.todos__cta--mobile {
+  padding-block: 0.95rem;
+  margin-inline: 1.5rem;
+  transform: translatey(-5rem);
+}
+
+.card.todos__cta--mobile nav {
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.card.todos__cta--mobile nav a {
+  color: #9495a5;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+}

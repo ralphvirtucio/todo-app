@@ -13,6 +13,7 @@ padding-inline: 1.25rem;
   color: #494c6b;
   margin-inline-start: .75rem;
   margin-inline-end: auto;
+  cursor: pointer;
 }
 
 .todo__remove-btn {
