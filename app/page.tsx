@@ -19,6 +19,11 @@ export default function Home() {
         <TodoListContainer todos={data} />
         <div className={styles.todos__details}>
           <p className={styles['todos__details--items-left']}>5 items left</p>
+          <nav className={styles['todos__cta--desktop']}>
+            <a href='#'>All</a>
+            <a href='#'>Active</a>
+            <a href='#'>Completed</a>
+          </nav>
           <button className={styles['todos__details--clear-btn']}>Clear Completed</button>
         </div>
       </Card>
