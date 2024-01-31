@@ -1,13 +1,19 @@
-.header {
+.header__container {
   background-image: url('../../public/images/bg-mobile-light.jpg');
-  display: flex;
-  /* align-items: center; */
-  justify-content: space-between;
-  padding-inline: 1.5rem;
-  padding-block-start: 2rem;
+  min-height: 200px;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 200px;
+  padding-inline: 1.5rem;
+  padding-block: 2rem;
+}
+
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 30rem;
+  margin-inline: auto;
 }
 
 .header h1 {
@@ -19,4 +25,11 @@
 .header button {
   border: none;
   background-color: transparent;
+}
+
+
+@media only screen and (min-width: 64rem) {
+  .header {
+    background-image: url('../../public/images/bg-desktop-light.jpg');
+  }
 }
