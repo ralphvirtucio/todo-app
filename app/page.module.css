@@ -12,7 +12,6 @@
   font-size: 0.75rem;
 }
 
-
 .todos__details--clear-btn {
   border: none;
   color: #9495A5;
@@ -44,7 +43,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.2rem;
+    gap: 1.19rem;
   }
 
 
