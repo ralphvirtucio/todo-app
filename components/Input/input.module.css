@@ -8,6 +8,9 @@
   padding-inline: 1.25rem;
   margin-inline: 1.5rem;
   transform: translateY(-6rem);
+  max-width: 33rem;
+  margin-inline: auto;
+  width: 90%;
 
 
   .readonly-checkbox {
@@ -24,3 +27,11 @@
     color: hsla(235, 9%, 61%, 1);
   }
 }
+
+
+@media only screen and (min-width: 48rem) {
+  .form__control {
+    transform: translateY(-9rem);
+  }
+}
+

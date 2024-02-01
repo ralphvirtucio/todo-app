@@ -53,4 +53,9 @@
     font-weight: 700;
     text-decoration: none;
   }
+
+
+  .todos__drag-n-drop-label {
+    transform: translateY(0);
+  }
 }
