@@ -1,14 +1,14 @@
-
 .todo {
-display: flex;
-align-items: center;
-padding-block: 1.3rem;
-border-bottom: 1px solid hsla(236, 32%, 92%, 1);
-padding-inline: 1.25rem;
+  display: flex;
+  align-items: center;
+  padding-block: 1.3rem;
+  border-bottom: 1px solid hsla(236, 32%, 92%, 1);
+  padding-inline: 1.25rem;
 }
 
 .todo:hover .todo__remove-btn {
   display: block;
+  cursor: pointer;
 }
 
 
@@ -25,6 +25,46 @@ padding-inline: 1.25rem;
   background-color: transparent;
   line-height: 0;
   display: none;
+}
+
+.todo__input-checkbox {
+  display: none;
+}
+
+.todo__input-checkbox + .todo__checkbox {
+  display: none;
+
+}
+
+.todo__input-checkbox + .todo__checkbox + .todo__unchecked {
+  display: block;
+}
+
+.todo__input-checkbox:checked + .todo__checkbox {
+ display: flex; 
+}
+
+.todo__input-checkbox:checked + .todo__checkbox + .todo__unchecked {
+ display: none; 
+}
+
+.todo__input-checkbox:checked ~ .todo__description {
+  text-decoration: line-through;
+  color: #D1D2DA;
+}
+.todo__unchecked {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.todo__checkbox {
+  background: linear-gradient(hsl(192, 100%, 67%),  hsl(280, 87%, 65%));
+  border-radius: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 

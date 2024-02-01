@@ -3,12 +3,11 @@
 import { TodoItem } from '@/components/TodoItem'
 import React from 'react'
 
-const TodoListContainer = ({todos}) => {
+const TodoListContainer = ({todos, onDeleteTodo, onCheckedTodo}) => {
 
-  const {data} = todos
-  const mappedTodosList = data.map(item => {
+  const mappedTodosList = todos.map(item => {
     return (
-      <TodoItem key={item.id} todo={item} />
+      <TodoItem key={item.id} todo={item} onDeleteTodo={onDeleteTodo} onCheckedTodo={onCheckedTodo}/>
     )
   }) 
 

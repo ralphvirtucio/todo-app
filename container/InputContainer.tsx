@@ -1,11 +1,11 @@
 import { Input } from "@/components/Input"
 
 
-const InputContainer = () => {
+const InputContainer = ({todoDesc, onChangeTodoDesc, onBlurSubmit}: {todoDesc: string, onChangeTodoDesc: void}) => {
 
   return (
     <>
-      <Input />
+      <Input  value={todoDesc} onChangeValue={onChangeTodoDesc} onBlurSubmitValue={onBlurSubmit}/>
     </>
   )
 }
