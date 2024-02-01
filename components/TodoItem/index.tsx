@@ -4,7 +4,22 @@ import { IconCross } from '../Icons/Cross';
 import { IconUnchecked } from '../Icons/Unchecked';
 import { IconChecked } from '../Icons/Checked';
 
-export const TodoItem = ({ todo, onDeleteTodo, onCheckedTodo }) => {
+  
+interface Todo {
+  description: string;
+  isCompleted: boolean;
+  isActive: boolean;
+  id: string;
+}
+
+interface TodoItemProps {
+  todo: Todo,
+  onDeleteTodo: (id: string) => void,
+  onCheckedTodo: React.ChangeEventHandler<HTMLInputElement>
+}
+
+export const TodoItem = ({ todo, onDeleteTodo, onCheckedTodo }: TodoItemProps) => {
+  
   return (
     <li className={styles.todo}>
       <input

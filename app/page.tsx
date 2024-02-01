@@ -5,24 +5,29 @@ import InputContainer from '@/container/InputContainer';
 import TodoListContainer from '@/container/TodoListContainer';
 import data from '@/data/data.json';
 import styles from './page.module.css';
+import React from 'react';
 import { useState } from 'react';
 import { Card } from '@/components/Card';
 import { v4 as uuidv4 } from 'uuid';
 
+
+
 export default function Home() {
   const [todos, setTodos] = useState(data.data);
   const [todoDesc, setTodoDesc] = useState('');
-  const [todoTab, setTodoTab] = useState('all')
+  const [todoTab, setTodoTab] = useState('all');
 
-  const handleTodoDesc = (e) => {
-    setTodoDesc(e.target.value);
+  const handleTodoDesc = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    setTodoDesc(value);
   };
 
-  const handleSubmitTodoBlur = (e) => {
+  const handleSubmitTodoBlur = (event: React.FocusEvent<HTMLInputElement>) => {
     const todoId = uuidv4();
+    const { value } = event.target;
 
     const newTodoObj = {
-      description: e.target.value,
+      description: value,
       isCompleted: false,
       isActive: false,
       id: todoId,
@@ -33,25 +38,26 @@ export default function Home() {
     setTodoDesc('');
   };
 
-  const handleDeleteTodo = (id) => {
+  const handleDeleteTodo = (id: string) => {
     setTodos((prev) => prev.filter((t) => t.id !== id));
   };
 
-  const handleCompleteTodo = (e) => {
+  const handleCompleteTodo = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, checked } = e.target;
-    const selectedTodo = todos.find(t => t.id === id)
+    const selectedTodo = todos.find((t) => t.id === id);
 
+    if (selectedTodo) {
+      selectedTodo.isCompleted = checked;
 
-    selectedTodo.isCompleted = checked
-
-    setTodos((prev) => {
-      return prev.map(t => {
-        return {
-          ...t,
-          isCompleted: selectedTodo.isCompleted
-        }
-      })
-    })
+      setTodos((prev) => {
+        return prev.map((t) => {
+          return {
+            ...t,
+            isCompleted: selectedTodo.isCompleted,
+          };
+        });
+      });
+    }
   };
 
   return (

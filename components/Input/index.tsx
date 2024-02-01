@@ -1,7 +1,8 @@
+import { ChangeEventHandler, FocusEventHandler } from 'react';
 import { IconUnchecked } from '../Icons/Unchecked';
 import styles from './input.module.css';
 
-export const Input = ({value, onChangeValue, onBlurSubmitValue}: {value: string, onChangeValue: any, onBlurSubmitValue: any}) => {
+export const Input = ({value, onChangeValue, onBlurSubmitValue}: {value: string, onChangeValue: ChangeEventHandler , onBlurSubmitValue: FocusEventHandler}) => {
   return (
     <div className={styles.form__control}>
       <div className={styles['readonly-checkbox']}>
