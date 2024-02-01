@@ -31,9 +31,17 @@
   font-size: 0.875rem;
   font-weight: 700;
   text-decoration: none;
+ transition: 200ms color ease-in-out;
+
 }
 
+.card.todos__cta--mobile nav a:hover {
+  color: #494C6B;
+}
 
+.card.todos__cta--mobile nav a.cta__active {
+  color: #3A7CFD;
+}
 
 @media only screen and (min-width: 48rem) {
   .card.todos {

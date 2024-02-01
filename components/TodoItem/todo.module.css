@@ -7,6 +7,10 @@ border-bottom: 1px solid hsla(236, 32%, 92%, 1);
 padding-inline: 1.25rem;
 }
 
+.todo:hover .todo__remove-btn {
+  display: block;
+}
+
 
 .todo__description {
   font-size: 0.75rem;
@@ -20,6 +24,7 @@ padding-inline: 1.25rem;
   border: none;
   background-color: transparent;
   line-height: 0;
+  display: none;
 }
 
 

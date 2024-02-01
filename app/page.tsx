@@ -18,7 +18,7 @@ export default function Home() {
       <Card customStyles="todos"> 
         <TodoListContainer todos={data} />
         <div className={styles.todos__details}>
-          <p className={styles['todos__details--items-left']}>5 items left</p>
+          <p className={styles['todos__details--items-left']}>{data.data.length} items left</p>
           <nav className={styles['todos__cta--desktop']}>
             <a href='#'>All</a>
             <a href='#'>Active</a>
