@@ -8,13 +8,13 @@
     },
     {
       "description": "10 minutes meditation",
-      "isCompleted": false,
+      "isCompleted": true,
       "isActive": false,
      "id": "14adf545-da7b-5c45-9bdd-b3ca8bd1f79c" 
     },
     {
       "description": "Read for 1 hour",
-      "isCompleted": false,
+      "isCompleted": true,
       "isActive": false,
      "id": "bec8d7fd-c97e-575b-838c-3548ef384766" 
     },
@@ -26,7 +26,7 @@
     },
     {
       "description": "Complete Todo App on Frontend Mentor",
-      "isCompleted": false,
+      "isCompleted": true,
       "isActive": false,
       "id": "600cbaac-fb4c-5253-8949-7eb4f6ce227e"
     }

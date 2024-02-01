@@ -5,7 +5,6 @@ import { IconUnchecked } from '../Icons/Unchecked';
 import { IconChecked } from '../Icons/Checked';
 
 export const TodoItem = ({ todo, onDeleteTodo, onCheckedTodo }) => {
-
   return (
     <li className={styles.todo}>
       <input
@@ -13,7 +12,7 @@ export const TodoItem = ({ todo, onDeleteTodo, onCheckedTodo }) => {
         className={styles['todo__input-checkbox']}
         name='todo-checkbox'
         id={todo.id}
-        value={todo.isCompleted}
+        checked={todo.isCompleted}
         onChange={onCheckedTodo}
       />
       <div className={styles.todo__checkbox}>

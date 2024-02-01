@@ -10,8 +10,9 @@ import { Card } from '@/components/Card';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function Home() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(data.data);
   const [todoDesc, setTodoDesc] = useState('');
+  const [todoTab, setTodoTab] = useState('all')
 
   const handleTodoDesc = (e) => {
     setTodoDesc(e.target.value);
