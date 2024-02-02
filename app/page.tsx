@@ -60,6 +60,23 @@ export default function Home() {
     }
   };
 
+  const handleSelectTodoStatus = (status) => {
+    const sampleTodo = [...todos]
+
+    if(status === 'all') {
+      console.log(sampleTodo)
+    } else if (status === 'active') {
+      const x = sampleTodo.filter(t => t.isActive)
+      console.log('active', x)
+    } else if (status === 'completed') {
+
+      const y =sampleTodo.filter(t => t.isCompleted)
+      console.log('completed', y)
+    }
+  }
+
+  // const todoSelectedTab = 
+
   return (
     <>
       <section>
@@ -81,9 +98,9 @@ export default function Home() {
             {todos.length} items left
           </p>
           <nav className={styles['todos__cta--desktop']}>
-            <a href='#'>All</a>
-            <a href='#'>Active</a>
-            <a href='#'>Completed</a>
+            <a href='#' onClick={() => handleSelectTodoStatus('all')}>All</a>
+            <a href='#' onClick={() => handleSelectTodoStatus('active')}>Active</a>
+            <a href='#' onClick={() => handleSelectTodoStatus('completed')}>Completed</a>
           </nav>
           <button className={styles['todos__details--clear-btn']}>
             Clear Completed
