@@ -10,8 +10,6 @@ import { useState } from 'react';
 import { Card } from '@/components/Card';
 import { v4 as uuidv4 } from 'uuid';
 
-
-
 export default function Home() {
   const [todos, setTodos] = useState(data.data);
   const [todoDesc, setTodoDesc] = useState('');
@@ -61,22 +59,29 @@ export default function Home() {
   };
 
   const handleSelectTodoStatus = (status) => {
-    const sampleTodo = [...todos]
+    setTodoTab(status);
 
-    if(status === 'all') {
-      console.log(sampleTodo)
-    } else if (status === 'active') {
-      const x = sampleTodo.filter(t => t.isActive)
-      console.log('active', x)
-    } else if (status === 'completed') {
+    // if (todoTab === 'all') {
+    //   setTodos(todos)
+    //   console.log('all', todos)
+    // } else if (todoTab === 'active') {
+    //   const updatedTodos = todos.filter((t) => t.isActive);
+    //   setTodos(updatedTodos)
+    //   console.log('active', todos);
+    // } else if (todoTab === 'completed') {
+    //   const updatedTodos = todos.filter((t) => t.isCompleted);
+    //   setTodos(updatedTodos)
+    //   console.log('completed',todos);
+    // }
+  };
 
-      const y =sampleTodo.filter(t => t.isCompleted)
-      console.log('completed', y)
-    }
+  const handleClearCompletedTodo = () => {
+    setTodos(prev => {
+      return prev.filter(t => !t.isCompleted)
+    })
   }
 
-  // const todoSelectedTab = 
-
+  
   return (
     <>
       <section>
@@ -95,14 +100,26 @@ export default function Home() {
         />
         <div className={styles.todos__details}>
           <p className={styles['todos__details--items-left']}>
-            {todos.length} items left
+            {todos?.length} items left
           </p>
           <nav className={styles['todos__cta--desktop']}>
-            <a href='#' onClick={() => handleSelectTodoStatus('all')}>All</a>
-            <a href='#' onClick={() => handleSelectTodoStatus('active')}>Active</a>
-            <a href='#' onClick={() => handleSelectTodoStatus('completed')}>Completed</a>
+            <a
+              href='#'
+              onClick={() => handleSelectTodoStatus('all')}>
+              All
+            </a>
+            <a
+              href='#'
+              onClick={() => handleSelectTodoStatus('active')}>
+              Active
+            </a>
+            <a
+              href='#'
+              onClick={() => handleSelectTodoStatus('completed')}>
+              Completed
+            </a>
           </nav>
-          <button className={styles['todos__details--clear-btn']}>
+          <button className={styles['todos__details--clear-btn']} onClick={handleClearCompletedTodo}>
             Clear Completed
           </button>
         </div>
