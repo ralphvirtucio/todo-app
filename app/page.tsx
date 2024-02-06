@@ -58,21 +58,21 @@ export default function Home() {
     }
   };
 
-  const handleSelectTodoStatus = (status) => {
+  const handleSelectTodoStatus = (status: string) => {
     setTodoTab(status);
+    const cloneTodos = [...todos]
 
-    // if (todoTab === 'all') {
-    //   setTodos(todos)
-    //   console.log('all', todos)
-    // } else if (todoTab === 'active') {
-    //   const updatedTodos = todos.filter((t) => t.isActive);
-    //   setTodos(updatedTodos)
-    //   console.log('active', todos);
-    // } else if (todoTab === 'completed') {
-    //   const updatedTodos = todos.filter((t) => t.isCompleted);
-    //   setTodos(updatedTodos)
-    //   console.log('completed',todos);
-    // }
+    if(status === 'active') {
+      setTodos((prev) => prev.filter((t) => t.isActive))
+    } else if (status === 'completed') {
+      setTodos((prev) => prev.filter((t) => t.isCompleted))
+    } else {
+      setTodos(cloneTodos)
+    }
+
+    console.log(todos)
+
+    console.log(cloneTodos)
   };
 
   const handleClearCompletedTodo = () => {
