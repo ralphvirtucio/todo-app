@@ -60,19 +60,30 @@ export default function Home() {
 
   const handleSelectTodoStatus = (status: string) => {
     setTodoTab(status);
-    const cloneTodos = [...todos]
 
-    if(status === 'active') {
-      setTodos((prev) => prev.filter((t) => t.isActive))
-    } else if (status === 'completed') {
-      setTodos((prev) => prev.filter((t) => t.isCompleted))
-    } else {
-      setTodos(cloneTodos)
-    }
+
+    setTodos((prev) => {
+      return prev.filter(t => {
+        if(status === 'active') {
+          return false
+        } else {
+          return true
+        }
+      })
+    })
+    // const cloneTodos = [...todos]
+
+    // if(status === 'active') {
+    //   setTodos((prev) => prev.filter((t) => t.isActive))
+    // } else if (status === 'completed') {
+    //   setTodos((prev) => prev.filter((t) => t.isCompleted))
+    // } else {
+    //   setTodos(cloneTodos)
+    // }
 
     console.log(todos)
 
-    console.log(cloneTodos)
+    // console.log(cloneTodos)
   };
 
   const handleClearCompletedTodo = () => {
