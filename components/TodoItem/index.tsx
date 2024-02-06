@@ -25,7 +25,6 @@ export const TodoItem = ({ todo, onDeleteTodo, onCheckedTodo }: TodoItemProps) =
       <input
         type='checkbox'
         className={styles['todo__input-checkbox']}
-        name='todo-checkbox'
         id={todo.id}
         checked={todo.isCompleted}
         onChange={onCheckedTodo}

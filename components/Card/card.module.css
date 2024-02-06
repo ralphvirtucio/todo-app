@@ -2,7 +2,7 @@
   border-radius: 0.3125rem;
   box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
   background-color: #fff;
-  max-width: 33rem; 
+  max-width: 33rem;
   margin-inline: auto;
   width: 90%;
 }
@@ -31,16 +31,16 @@
   font-size: 0.875rem;
   font-weight: 700;
   text-decoration: none;
- transition: 200ms color ease-in-out;
-
+  transition: 200ms color ease-in-out;
+  cursor: pointer;
 }
 
 .card.todos__cta--mobile nav a:hover {
-  color: #494C6B;
+  color: #494c6b;
 }
 
 .card.todos__cta--mobile nav a.cta__active {
-  color: #3A7CFD;
+  color: #3a7cfd;
 }
 
 @media only screen and (min-width: 48rem) {

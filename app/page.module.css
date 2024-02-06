@@ -38,6 +38,7 @@
 
 .todos__cta--desktop a {
   transition: 200ms color ease-in-out;
+  cursor: pointer;
 }
 
 .todos__cta--desktop a:hover {

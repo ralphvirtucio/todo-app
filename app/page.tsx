@@ -9,19 +9,25 @@ import React from 'react';
 import { useState } from 'react';
 import { Card } from '@/components/Card';
 import { v4 as uuidv4 } from 'uuid';
+interface TodoItemType {
+  description: string;
+  isCompleted: boolean;
+  isActive: boolean;
+  id: string;
+}
 
 export default function Home() {
-  const [todos, setTodos] = useState(data.data);
+  const [todos, setTodos] = useState(Array<TodoItemType>);
   const [todoDesc, setTodoDesc] = useState('');
   const [todoTab, setTodoTab] = useState('all');
 
+  const todoId = uuidv4();
   const handleTodoDesc = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setTodoDesc(value);
   };
 
   const handleSubmitTodoBlur = (event: React.FocusEvent<HTMLInputElement>) => {
-    const todoId = uuidv4();
     const { value } = event.target;
 
     const newTodoObj = {
@@ -116,19 +122,16 @@ export default function Home() {
           </p>
           <nav className={styles['todos__cta--desktop']}>
             <a
-              href='#'
               className={styles[todoTab === 'all' ? 'cta__active' : '']}
               onClick={() => handleSelectTodoStatus('all')}>
               All
             </a>
             <a
-              href='#'
               className={styles[todoTab === 'active' ? 'cta__active' : '']}
               onClick={() => handleSelectTodoStatus('active')}>
               Active
             </a>
             <a
-              href='#'
               className={styles[todoTab === 'completed' ? 'cta__active' : '']}
               onClick={() => handleSelectTodoStatus('completed')}>
               Completed
