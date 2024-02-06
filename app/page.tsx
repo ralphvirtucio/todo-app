@@ -60,30 +60,23 @@ export default function Home() {
 
   const handleSelectTodoStatus = (status: string) => {
     setTodoTab(status);
-
-
-    setTodos((prev) => {
-      return prev.filter(t => {
-        if(status === 'active') {
-          return false
-        } else {
-          return true
-        }
-      })
-    })
-    // const cloneTodos = [...todos]
-
     // if(status === 'active') {
-    //   setTodos((prev) => prev.filter((t) => t.isActive))
+    //   setTodos(prev => {
+    //     return todos.filter(t => {
+    //       return !t.isCompleted 
+    //     })
+    //   })
     // } else if (status === 'completed') {
-    //   setTodos((prev) => prev.filter((t) => t.isCompleted))
+    //   setTodos(prev => {
+    //     return todos.filter(t => {
+    //       return t.isCompleted
+    //     })
+    //   })
     // } else {
-    //   setTodos(cloneTodos)
+    //   setTodos(todos)
     // }
 
-    console.log(todos)
-
-    // console.log(cloneTodos)
+    // console.log(todos)
   };
 
   const handleClearCompletedTodo = () => {
@@ -91,6 +84,14 @@ export default function Home() {
       return prev.filter(t => !t.isCompleted)
     })
   }
+
+
+  const filteredTodos = todos.filter(t => {
+    if(todoTab === 'all') return true
+    if(todoTab === 'active') return !t.isCompleted && t.isActive
+    if(todoTab === 'completed') return t.isCompleted
+    return true
+  })
 
   
   return (
@@ -105,7 +106,7 @@ export default function Home() {
 
       <Card customStyles='todos'>
         <TodoListContainer
-          todos={todos}
+          todos={filteredTodos}
           onDeleteTodo={handleDeleteTodo}
           onCheckedTodo={handleCompleteTodo}
         />
@@ -116,20 +117,24 @@ export default function Home() {
           <nav className={styles['todos__cta--desktop']}>
             <a
               href='#'
+              className={styles[todoTab === 'all' ? 'cta__active' : '']}
               onClick={() => handleSelectTodoStatus('all')}>
               All
             </a>
             <a
               href='#'
+              className={styles[todoTab === 'active' ? 'cta__active' : '']}
               onClick={() => handleSelectTodoStatus('active')}>
               Active
             </a>
             <a
               href='#'
+              className={styles[todoTab === 'completed' ? 'cta__active' : '']}
               onClick={() => handleSelectTodoStatus('completed')}>
               Completed
             </a>
           </nav>
+            
           <button className={styles['todos__details--clear-btn']} onClick={handleClearCompletedTodo}>
             Clear Completed
           </button>
