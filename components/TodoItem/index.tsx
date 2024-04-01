@@ -20,6 +20,7 @@ interface TodoItemProps {
 
 export const TodoItem = ({ todo, onDeleteTodo, onCheckedTodo }: TodoItemProps) => {
   
+
   return (
     <li className={styles.todo}>
       <input

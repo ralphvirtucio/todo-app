@@ -22,6 +22,7 @@ export default function Home() {
   const [todoTab, setTodoTab] = useState('all');
 
   const todoId = uuidv4();
+
   const handleTodoDesc = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setTodoDesc(value);
@@ -33,11 +34,18 @@ export default function Home() {
     const newTodoObj = {
       description: value,
       isCompleted: false,
-      isActive: false,
+      isActive: true,
       id: todoId,
     };
 
-    setTodos((prev) => [newTodoObj, ...prev]);
+
+    if(value) {
+      setTodos((prev) => [newTodoObj, ...prev]);
+
+    } else {
+      alert('Please enter todo')
+    }
+
 
     setTodoDesc('');
   };
@@ -58,6 +66,7 @@ export default function Home() {
           return {
             ...t,
             isCompleted: selectedTodo.isCompleted,
+            isActive: false
           };
         });
       });
@@ -66,23 +75,6 @@ export default function Home() {
 
   const handleSelectTodoStatus = (status: string) => {
     setTodoTab(status);
-    // if(status === 'active') {
-    //   setTodos(prev => {
-    //     return todos.filter(t => {
-    //       return !t.isCompleted 
-    //     })
-    //   })
-    // } else if (status === 'completed') {
-    //   setTodos(prev => {
-    //     return todos.filter(t => {
-    //       return t.isCompleted
-    //     })
-    //   })
-    // } else {
-    //   setTodos(todos)
-    // }
-
-    // console.log(todos)
   };
 
   const handleClearCompletedTodo = () => {
@@ -94,7 +86,7 @@ export default function Home() {
 
   const filteredTodos = todos.filter(t => {
     if(todoTab === 'all') return true
-    if(todoTab === 'active') return !t.isCompleted && t.isActive
+    if(todoTab === 'active') return t.isActive
     if(todoTab === 'completed') return t.isCompleted
     return true
   })
