@@ -21,6 +21,7 @@ interface TodoItemProps {
 export const TodoItem = ({ todo, onDeleteTodo, onCheckedTodo }: TodoItemProps) => {
   
 
+
   return (
     <li className={styles.todo}>
       <input
@@ -30,13 +31,13 @@ export const TodoItem = ({ todo, onDeleteTodo, onCheckedTodo }: TodoItemProps) =
         checked={todo.isCompleted}
         onChange={onCheckedTodo}
       />
-      <div className={styles.todo__checkbox}>
+      <label className={styles.todo__checkbox} htmlFor={todo.id}>
         <IconChecked />
-      </div>
+      </label>
 
-      <div className={styles.todo__unchecked}>
+      <label className={styles.todo__unchecked} htmlFor={todo.id}>
         <IconUnchecked />
-      </div>
+      </label>
       <label
         className={styles.todo__description}
         htmlFor={todo.id}>

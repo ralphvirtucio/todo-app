@@ -21,7 +21,6 @@ export default function Home() {
   const [todoDesc, setTodoDesc] = useState('');
   const [todoTab, setTodoTab] = useState('all');
 
-  const todoId = uuidv4();
 
   const handleTodoDesc = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
@@ -30,6 +29,8 @@ export default function Home() {
 
   const handleSubmitTodoBlur = (event: React.FocusEvent<HTMLInputElement>) => {
     const { value } = event.target;
+
+    const todoId = uuidv4();
 
     const newTodoObj = {
       description: value,
@@ -47,6 +48,7 @@ export default function Home() {
     }
 
 
+
     setTodoDesc('');
   };
 
@@ -56,21 +58,20 @@ export default function Home() {
 
   const handleCompleteTodo = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, checked } = e.target;
-    const selectedTodo = todos.find((t) => t.id === id);
 
-    if (selectedTodo) {
-      selectedTodo.isCompleted = checked;
 
-      setTodos((prev) => {
-        return prev.map((t) => {
-          return {
-            ...t,
-            isCompleted: selectedTodo.isCompleted,
-            isActive: false
-          };
-        });
-      });
-    }
+    const completedTodo = todos.map(t => {
+      if(t.id === id) {
+        return {
+          ...t,
+          isCompleted: checked,
+          isActive: false,
+        }
+      } else {
+        return t
+      }
+    })
+    setTodos(completedTodo)
   };
 
   const handleSelectTodoStatus = (status: string) => {
